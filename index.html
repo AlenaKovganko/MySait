@@ -10,6 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Signika:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/CSS/style.css">
+    <link rel="stylesheet" href="./assets/CSS/styleModal.css">
     <style>
 
     </style>
@@ -48,9 +49,60 @@
                 <br>
                 for fast-growing startups.
             </p>
-            <button class="b_write_me"> Write me!
+            <form>
+                <input type="button" class="b_write_me" value="Write me!" onclick="showModalWin()">
+            </form>
+            <!-- <button class="b_write_me" > Write me!
                 <img src="https://static.thenounproject.com/png/4093-200.png" alt="✉" width="17" />
-            </button>
+            </button> -->
+            <div id="popupWin" class="modalwin">
+
+               
+                <form method="post">
+                    <h1 style="text-align: center"> FEEDBACK </h1>
+                    <div>
+                        <label>
+                            <input type="text" name="nameUsers" id="feedback" placeholder="  Имя" required />
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="email" id="feedback" id="email" placeholder="  email" required name="email"/>
+                        </label>
+                    </div>
+                    <div id="tellus">
+                        <textarea>
+
+                            </textarea>
+                    </div>
+                    <button type="submit"id="submitFeedback" value="Submit">Submit</button>
+                </form>
+
+
+            </div>
+            <script>
+                function showModalWin() {
+                    // var darkLayer = document.createElement('div'); // слой затемнения
+                    // darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+                    // document.body.appendChild(darkLayer); // включаем затемнение
+                    let btnFeedback = document.querySelector("#btnFeedback");
+
+                    let win = document.querySelector("#popupWin");
+                    win.style.display = 'block';
+                    document.body.appendChild(win);
+
+                    let submit = document.querySelector("#submitFeedback");
+
+
+                    submit.addEventListener('click', (e) => {
+                        win.style.display = 'none';
+                        alert('Благодарим за отзыв');
+
+                    })
+
+                }
+            </script>
             <!-- <img src="./assets/images/react.png" class="desktop" id="react" alt="react">
             <img src="./assets/images/mysql.png" class="desktop" id="mysql" alt="mysql">
             <img src="./assets/images/php.png" class="desktop" id="php" alt="php">
@@ -67,7 +119,7 @@
         reviews-skills">
             <article class="
             reviews">
-            <h4>Reviews</h4>
+                <h4>Reviews</h4>
                 <img src="./UI-elements/icons/star.png" width="10" height="10" alt="img">
                 <img src="./UI-elements/icons/star.png" width="10" height="10" alt="img">
                 <img src="./UI-elements/icons/star.png" width="10" height="10" alt="img">
@@ -122,11 +174,13 @@
                 <h4>Memorabilia </h4>
                 <p>Choose from easy, affordable options for merch like custom tees and sets of pins.</p>
                 <h4> Branding </h4>
-                <p>Refresh your logo, revamp your website, and even your letterhead— develop a cohesive aesthetic for your brand.</p>
+                <p>Refresh your logo, revamp your website, and even your letterhead— develop a cohesive aesthetic for
+                    your brand.</p>
                 <h4>Visual Aids </h4>
                 <p>Make your point more convincingly with branded flyers, slides, catalogues, infographics</p>
                 <h4>Packaging</h4>
-                <p>Rethink labels, boxes, signage, and everything that'll help your product make a great first impression.</p>
+                <p>Rethink labels, boxes, signage, and everything that'll help your product make a great first
+                    impression.</p>
 
             </article>
         </section>
@@ -143,15 +197,15 @@
         </section>
         <section class="desktop" class="coffee">
             <article class="coffee1-1">
-                <p> Work <br> 
+                <p> Work <br>
                     Favorite projects, award-winning campaigns and more. <br>
-                    View all 
-                </p>       
+                    View all
+                </p>
             </article>
             <article class="coffee1-2">
-            <p>About <br>
-                My journey, career highlights and everything else you need to know. <br>
-                Get to know me </p>
+                <p>About <br>
+                    My journey, career highlights and everything else you need to know. <br>
+                    Get to know me </p>
             </article>
         </section>
     </main>
